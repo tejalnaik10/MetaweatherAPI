@@ -4996,3 +4996,83 @@ java.lang.NoClassDefFoundError: com/microsoft/tfs/client/eclipse/resourcechange/
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:157)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY org.eclipse.core.resources 4 2 2019-10-01 18:13:31.140
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: com/microsoft/tfs/client/eclipse/resourcechange/DeltaVisitor
+	at com.microsoft.tfs.client.eclipse.resourcechange.TFSResourceChangeListener.resourceChanged(TFSResourceChangeListener.java:249)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:297)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:287)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:150)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:376)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1499)
+	at org.eclipse.core.internal.resources.Project.touch(Project.java:1324)
+	at org.eclipse.team.core.RepositoryProvider.map(RepositoryProvider.java:132)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:165)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$2.run(SharingWizard.java:157)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2019-10-01 18:13:31.141
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: com/microsoft/tfs/client/eclipse/resourcechange/DeltaVisitor
+	at com.microsoft.tfs.client.eclipse.resourcechange.TFSResourceChangeListener.resourceChanged(TFSResourceChangeListener.java:249)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:297)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:287)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:150)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:376)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1499)
+	at org.eclipse.core.internal.resources.Project.touch(Project.java:1324)
+	at org.eclipse.team.core.RepositoryProvider.map(RepositoryProvider.java:132)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:165)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$2.run(SharingWizard.java:157)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2019-10-01 18:13:31.255
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: com/microsoft/tfs/client/eclipse/resourcechange/DeltaVisitor
+	at com.microsoft.tfs.client.eclipse.resourcechange.TFSResourceChangeListener.resourceChanged(TFSResourceChangeListener.java:249)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:297)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:287)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:150)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:376)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1499)
+	at org.eclipse.core.internal.resources.File.create(File.java:170)
+	at org.eclipse.core.internal.resources.File.create(File.java:181)
+	at org.eclipse.egit.core.op.IgnoreOperation.addToGitIgnore(IgnoreOperation.java:287)
+	at org.eclipse.egit.core.op.IgnoreOperation.updateGitIgnores(IgnoreOperation.java:242)
+	at org.eclipse.egit.core.op.IgnoreOperation.execute(IgnoreOperation.java:94)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.autoIgnoreDerivedResources(ConnectProviderOperation.java:244)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:190)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$2.run(SharingWizard.java:157)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2019-10-01 18:13:31.256
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: com/microsoft/tfs/client/eclipse/resourcechange/DeltaVisitor
+	at com.microsoft.tfs.client.eclipse.resourcechange.TFSResourceChangeListener.resourceChanged(TFSResourceChangeListener.java:249)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:297)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:287)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:150)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:376)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1499)
+	at org.eclipse.core.internal.resources.File.create(File.java:170)
+	at org.eclipse.core.internal.resources.File.create(File.java:181)
+	at org.eclipse.egit.core.op.IgnoreOperation.addToGitIgnore(IgnoreOperation.java:287)
+	at org.eclipse.egit.core.op.IgnoreOperation.updateGitIgnores(IgnoreOperation.java:242)
+	at org.eclipse.egit.core.op.IgnoreOperation.execute(IgnoreOperation.java:94)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.autoIgnoreDerivedResources(ConnectProviderOperation.java:244)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.connectProject(ConnectProviderOperation.java:190)
+	at org.eclipse.egit.core.op.ConnectProviderOperation.execute(ConnectProviderOperation.java:111)
+	at org.eclipse.egit.ui.internal.sharing.SharingWizard$2.run(SharingWizard.java:157)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
