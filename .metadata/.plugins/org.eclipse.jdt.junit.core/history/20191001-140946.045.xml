@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="MetaweatherAPI" tests="16" started="16" failures="0" errors="0" ignored="0">
+  <testsuite name="runners.TestRunner" time="5.715">
+    <testsuite name="Feature: Tests for Metaweather API" time="5.715">
+      <testsuite name="Scenario Outline: Testing Location API" time="3.893">
+        <testsuite name="Examples:" time="3.893">
+          <testsuite name="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="3.893">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="2.961"/>
+            <testcase name="When the system requests GET &quot;/44418&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.004"/>
+            <testcase name="Then the response code is 200" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.002"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.704"/>
+            <testcase name="And the response body contains a 5 forecast" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.221"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.001"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Negative test for Location API" time="0.789">
+        <testsuite name="Examples:" time="0.789">
+          <testsuite name="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.789">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.762"/>
+            <testcase name="When the system requests GET &quot;/4441&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="Then the response code is 404" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="And the response status is &quot;Not Found&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.024"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Testing Location Search API" time="1.029">
+        <testsuite name="Examples:" time="1.029">
+          <testsuite name="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="1.029">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.591"/>
+            <testcase name="When the system requests GET &quot;/search/?query=london&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="Then the response code is 200" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.062"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.374"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

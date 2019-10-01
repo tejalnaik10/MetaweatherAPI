@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="MetaweatherAPI" tests="19" started="19" failures="2" errors="0" ignored="0">
+  <testsuite name="runners.TestRunner" time="6.932">
+    <testsuite name="Feature: Tests for Metaweather API" time="6.932">
+      <testsuite name="Scenario Outline: Testing Location API" time="5.101">
+        <testsuite name="Examples:" time="5.101">
+          <testsuite name="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="5.101" incomplete="true">
+            <failure>java.lang.AssertionError: The following asserts failed:
+	expected [Heavy Cloud] but found [Heavy Rain],
+	expected [Showers] but found [Clear],
+	expected [Clear] but found [Light Rain],
+	expected [Light Cloud] but found [Heavy Rain],
+	expected [Showers] but found [Heavy Cloud]&#13;
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)&#13;
+	at gluecode.StepDefinition.the_response_body_contains_field_Value(StepDefinition.java:88)&#13;
+	at ✽.And the response body contains &lt;field&gt; &lt;Value&gt;(MetaweatherApi.feature:15)&#13;
+&#13;
+</failure>
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="4.312"/>
+            <testcase name="When the system requests GET &quot;/44418&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.014"/>
+            <testcase name="Then the response code is 200" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.005"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.002"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.644"/>
+            <testcase name="And the response body contains a 5 forecast" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.116"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.007">
+              <failure>java.lang.AssertionError: The following asserts failed:
+	expected [Heavy Cloud] but found [Heavy Rain],
+	expected [Showers] but found [Clear],
+	expected [Clear] but found [Light Rain],
+	expected [Light Cloud] but found [Heavy Rain],
+	expected [Showers] but found [Heavy Cloud]&#13;
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)&#13;
+	at gluecode.StepDefinition.the_response_body_contains_field_Value(StepDefinition.java:88)&#13;
+	at ✽.And the response body contains &lt;field&gt; &lt;Value&gt;(MetaweatherApi.feature:15)&#13;
+&#13;
+</failure>
+            </testcase>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Negative test for Location API" time="0.794">
+        <testsuite name="Examples:" time="0.794">
+          <testsuite name="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.794">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.78"/>
+            <testcase name="When the system requests GET &quot;/4441&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.0"/>
+            <testcase name="Then the response code is 404" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="And the response status is &quot;Not Found&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.011"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Testing Location Search API" time="1.024">
+        <testsuite name="Examples:" time="1.024">
+          <testsuite name="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="1.024">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.608"/>
+            <testcase name="When the system requests GET &quot;/search/?query=london&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="Then the response code is 200" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.002"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.031"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.381"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

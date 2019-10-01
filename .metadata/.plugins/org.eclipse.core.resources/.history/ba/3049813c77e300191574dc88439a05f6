@@ -1,0 +1,21 @@
+package runners;
+
+import org.junit.AfterClass;
+import org.junit.runner.RunWith;
+
+import com.vimalselvam.cucumber.listener.Reporter;
+
+import cucumber.api.junit.Cucumber;
+import cucumber.api.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "src/test/resources/features", glue = { "gluecode" },plugin = {
+"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:output/report.html"}, monochrome = true, tags = {
+				"@automation" })
+public class TestRunner {
+	@AfterClass
+    public static void writeExtentReport() {
+        Reporter.loadXMLConfig("src/extent-config.xml");
+    }
+
+}

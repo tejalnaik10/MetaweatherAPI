@@ -1,0 +1,11 @@
+package runners;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "src/test/resources/features", glue = { "gluecode" }, plugin = {
+		"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"}, monochrome = true, tags = {
+				"@login" })
+public class TestRunner {
+	
+
+}

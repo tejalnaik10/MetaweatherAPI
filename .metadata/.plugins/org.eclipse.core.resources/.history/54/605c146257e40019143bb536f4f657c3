@@ -1,0 +1,76 @@
+@metaweatherApi
+Feature: Tests for Metaweather API
+  This feature file contains tests for metaweather API
+
+  Background: 
+    Given a rest api "https://www.metaweather.com/api/location"
+
+  @automation
+  Scenario Outline: Testing Location API
+    When the system requests GET <Api>
+    Then the response code is <responseCode>
+    And the response status is "<status>"
+    And the response time is less than 1000 milliseconds
+    And the response body contains a 5 forecast
+    And the response body contains <field> <Value>
+      | field                                      | value       |
+      | consolidated_weather.weather_state_name[0] | Heavy Cloud |
+      | consolidated_weather.weather_state_name[1] | Showers     |
+      | consolidated_weather.weather_state_name[2] | Clear       |
+      | consolidated_weather.weather_state_name[3] | Light Cloud |
+      | consolidated_weather.weather_state_name[4] | Showers     |
+
+    Examples: 
+      | Title       | Api      | responseCode | status |
+      | Valid woied | "/44418" |          200 | OK     |
+
+  @automation @negativeTest
+  Scenario Outline: Negative test for Location API
+    When the system requests GET <Api>
+    Then the response code is <responseCode>
+    And the response status is "<status>"
+    And the response time is less than 1000 milliseconds
+    And the response body contains <field> <Value>
+      | field  | value      |
+      | detail | Not found. |
+
+    Examples: 
+      | Title         | Api     | responseCode | status    |
+      | Invalid woeid | "/4441" |          404 | Not Found |
+
+  @automation
+  Scenario Outline: Testing Location Search API
+    When the system requests GET <Api>
+    Then the response code is <responseCode>
+    And the response status is "<status>"
+    And the response time is less than 1000 milliseconds
+    And the response body contains <field> <Value>
+      | field         | value    |
+      | title         | [London] |
+      | location_type | [City]   |
+      | woeid         | [44418]  |
+
+    Examples: 
+      | Title          | Api                     | responseCode | status |
+      | Valid location | "/search/?query=london" |          200 | OK     |
+
+  @manual @negativeTest
+  Scenario Outline: Negative test for Location Search API
+    When the system requests GET <Api>
+    Then the response code is <responseCode>
+    And the response status is "<status>"
+    And the response body is empty
+
+    Examples: 
+      | Title                 | Api                     | responseCode | status |
+      | Invalid location name | "/search/?query=londan" |          200 | OK     |
+      
+  @manual @negativeTest
+  Scenario Outline: Negative test for Location Search API
+    When the system requests GET <Api>
+    Then the response code is <responseCode>
+    And the response status is "<status>"
+
+    Examples: 
+      | Title                 | Api                     | responseCode | status |
+      | Invalid API Url  | "/search/?lattlong=50.068" |          500 | Internal Server Error     |

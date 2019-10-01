@@ -1,0 +1,96 @@
+package gluecode;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
+import org.testng.asserts.SoftAssert;
+import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class StepDefinition {
+	RequestSpecification request = RestAssured.given();
+	Response response;
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	Calendar cal = Calendar.getInstance();
+	SoftAssert sa = new SoftAssert();
+
+	@Given("^a rest api \"([^\"]*)\"$")
+	public void a_rest_api(String baseuri) throws Throwable {
+		request.baseUri(baseuri);
+	}
+
+	@When("^the system requests (GET|POST) \"([^\"]*)\"$")
+	public void apiRequest(String apiMethod, String path) throws Throwable {
+		response = request.get(path);
+		switch (apiMethod) {
+		case "GET":
+			response = request.get(path);
+			break;
+		case "PUT":
+			response = request.put(path);
+			break;
+		case "POST":
+			response = request.post(path);
+			break;
+		case "PATCH":
+			response = request.patch(path);
+			break;
+		case "DELETE":
+			response = request.delete(path);
+			break;
+		}
+
+	}
+
+	@Then("^the response code is (\\d+)$")
+	public void verify_status_code(int code) throws NumberFormatException, IOException {
+	//	Assert.assertEquals(code, response.getStatusCode());  //Hard assert
+		sa.assertEquals(response.getStatusCode(), code);
+	}
+	
+	@Then("^the response time is less than (\\d+) seconds$")
+	public void the_response_time_is_less_than_seconds(int time) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^the response status is \"(.*)\"$")
+	public void verify_status_message(String msg) throws NumberFormatException, IOException {
+	//	Assert.assertTrue(response.statusLine().contains(msg)); //hard assert
+		sa.assertTrue(response.statusLine().contains(msg)); 
+	}
+
+	@Then("^the response body contains a (\\d+) forecast$")
+	public void the_response_body_contains_weather_for_days(int days) throws Throwable {
+		for (int i = 0; i < days; i++) {
+			
+			sa.assertEquals(response.path("consolidated_weather.applicable_date[" + i + "]").toString(), dateFormat.format(cal.getTime()));
+			//response.then().assertThat().body("consolidated_weather.applicable_date[" + i + "]",Is.is(dateFormat.format(cal.getTime())));  //This was a hard assert
+			cal.add(Calendar.DAY_OF_MONTH, 1);
+		}
+	}
+
+	@Then("^the response body contains <field> <Value>$")
+	public void the_response_body_contains_field_Value(DataTable dt) throws Throwable {
+		List<Map<String, String>> list = dt.asMaps(String.class, String.class);
+		for (int i = 0; i < list.size(); i++) {
+			/// response.then().assertThat().body(list.get(i).get("field"), Is.is(list.get(i).get("value")));   //This was a hard assert
+			sa.assertEquals(response.path(list.get(i).get("field")).toString(), list.get(i).get("value").toString());
+		}
+
+	}
+
+	@After
+	public void tearDown() {
+		sa.assertAll();
+	}
+
+}

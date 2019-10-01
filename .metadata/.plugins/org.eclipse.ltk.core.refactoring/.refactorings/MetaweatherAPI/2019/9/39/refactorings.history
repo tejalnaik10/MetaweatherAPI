@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;MetaweatherAPI&apos;&#x0D;&#x0A;- Original project: &apos;MetaweatherAPI&apos;&#x0D;&#x0A;- Original element: &apos;MetaweatherAPI/src/test/java/com.bbc.metaweather.MetaweatherAPI&apos;" description="Delete element" element1="/src\/test\/java&lt;com.bbc.metaweather.MetaweatherAPI" element2="/src\/test\/java&lt;com.bbc.metaweather" element3="/src\/test\/java&lt;com.bbc" element4="/src\/test\/java&lt;com" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1569790175360" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="MetaweatherAPI" tests="19" started="19" failures="1" errors="0" ignored="0">
+  <testsuite name="runners.TestRunner" time="6.426">
+    <testsuite name="Feature: Tests for Metaweather API" time="6.426">
+      <testsuite name="Scenario Outline: Testing Location API" time="4.471">
+        <testsuite name="Examples:" time="4.471">
+          <testsuite name="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="4.471" incomplete="true">
+            <failure>java.lang.AssertionError: The following asserts failed:
+	expected [Heavy Cloud] but found [Heavy Rain],
+	expected [Showers] but found [Clear],
+	expected [Clear] but found [Light Rain],
+	expected [Light Cloud] but found [Heavy Rain]&#13;
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:43)&#13;
+	at gluecode.StepDefinition.tearDown(StepDefinition.java:92)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)&#13;
+	at cucumber.runtime.Utils$1.call(Utils.java:40)&#13;
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)&#13;
+	at cucumber.runtime.Utils.invoke(Utils.java:34)&#13;
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)&#13;
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)&#13;
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:212)&#13;
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:206)&#13;
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)&#13;
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:128)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:27)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:128)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:27)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:100)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)&#13;
+&#13;
+</failure>
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="3.782"/>
+            <testcase name="When the system requests GET &quot;/44418&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.005"/>
+            <testcase name="Then the response code is 200" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.002"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.582"/>
+            <testcase name="And the response body contains a 5 forecast" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.092"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid woied | &quot;/44418&quot; | 200 | OK |" time="0.007"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Negative test for Location API" time="0.888">
+        <testsuite name="Examples:" time="0.888">
+          <testsuite name="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.888">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.875"/>
+            <testcase name="When the system requests GET &quot;/4441&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="Then the response code is 404" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.0"/>
+            <testcase name="And the response status is &quot;Not Found&quot;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.01"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Invalid woeid | &quot;/4441&quot; | 404 | Not Found |" time="0.001"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario Outline: Testing Location Search API" time="1.062">
+        <testsuite name="Examples:" time="1.062">
+          <testsuite name="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="1.062">
+            <testcase name="Given a rest api &quot;https://www.metaweather.com/api/location&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.638"/>
+            <testcase name="When the system requests GET &quot;/search/?query=london&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.002"/>
+            <testcase name="Then the response code is 200" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.0"/>
+            <testcase name="And the response status is &quot;OK&quot;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.001"/>
+            <testcase name="And the response time is less than 3000 milliseconds" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.031"/>
+            <testcase name="And the response body contains &lt;field&gt; &lt;Value&gt;" classname="| Valid location | &quot;/search/?query=london&quot; | 200 | OK |" time="0.389"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>
